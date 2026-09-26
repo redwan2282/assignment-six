@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import logo from "@/app/assets/logo.png";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,7 +24,60 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex flex-col min-h-screen">
+
+
+        <header>
+          <nav>
+            <div className="navbar bg-base-100 shadow-sm">
+              <div className="navbar-start">
+                <div className="dropdown">
+                  <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <svg aria-label="Menu" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> 
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> 
+                    </svg>
+                  </div>
+                  <ul
+                    tabIndex={-1}
+                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                    <li><a>Workouts</a></li>
+                    <li><a>My Plan</a></li>
+                  </ul>
+                </div>
+                <Image src={logo} alt="Logo"/>
+                <a className="btn btn-ghost text-xl">FITLOG</a>
+              </div>
+              <div className="navbar-center hidden lg:flex">
+                <ul className="menu menu-horizontal px-1">
+                  <li><a>Workouts</a></li>
+                  <li><a>My Plan</a></li>
+                </ul>
+              </div>
+              <div className="navbar-end">
+                <a className="btn">Plan</a>
+                <a className="btn">Saved</a>
+              </div>
+            </div>
+          </nav>
+        </header>
+
+
+
+        <main className="flex-1 bg-base-100">{children}</main>
+
+        
+
+        <footer className="bg-base-100 flex items-center justify-between px-[30px] py-[10px] shadow-inner">
+            <div className="flex gap-1 items-center">
+              <Image src={logo} alt="logo"/>
+              <p className="btn btn-ghost text-xl">FITLOG</p>
+            </div>
+            <div>
+              <p className="text-[12px] text-[#6b7280]">© 2026 FitLog — Workout Library. Train hard, log honest.</p>
+            </div>
+        </footer>
+
+      </body>
     </html>
   );
 }
