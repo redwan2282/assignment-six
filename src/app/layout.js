@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen w-[1400px] mx-auto">
 
 
         <header>
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
 
         
 
-        <footer className="bg-base-100 flex items-center justify-between px-[30px] py-[10px] shadow-inner">
+        <footer className="bg-base-100 flex items-center justify-between px-[30px] pb-[40px] pt-[10px] shadow-inner">
             <div className="flex gap-1 items-center">
               <Image src={logo} alt="logo"/>
               <p className="btn btn-ghost text-xl">FITLOG</p>
