@@ -6,7 +6,7 @@ const CallCard = async() => {
     console.log(data);
 
     return (
-        /* মোবাইলে ১ কলাম, ট্যাবলেটে ২ কলাম, পিসিতে ৩ কলাম */
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-[20px]">
             {
                 data.map((info) => {
